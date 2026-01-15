@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { io } from "socket.io-client";
 
-const API = "http://localhost:5001";
+const API = "https://onlyus-fjd2.onrender.com";
 
 export default function DM({ me, setScreen }) {
   const socket = useMemo(() => io(API, { transports: ["websocket"] }), []);

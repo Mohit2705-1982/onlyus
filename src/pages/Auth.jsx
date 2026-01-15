@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API = "http://localhost:5001";
+const API = "https://onlyus-fjd2.onrender.com";
 
 export default function Auth({ setScreen, setMe }) {
   const [username, setUsername] = useState("");
