@@ -9,10 +9,12 @@ import { v4 as uuidv4 } from "uuid";
 dotenv.config();
 
 const app = express();
+
 app.use(
   cors({
-    origin: "*",
+    origin: ["https://onlyus-sepia.vercel.app"],
     methods: ["GET", "POST"],
+    credentials: true,
   })
 );
 
@@ -21,7 +23,11 @@ app.use(express.json());
 const server = http.createServer(app);
 
 const io = new Server(server, {
-  cors: { origin: "*", methods: ["GET", "POST"] },
+  cors: {
+    origin: ["https://onlyus-sepia.vercel.app"],
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
 });
 
 const PORT = process.env.PORT || 5000;
